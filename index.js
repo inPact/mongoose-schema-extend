@@ -1,7 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    owl = require('owl-deepcopy');
+    _ = require('lodash');
 
 var Schema = mongoose.Schema,
     Model = mongoose.Model;
@@ -13,7 +13,7 @@ var Reflect = require('harmony-reflect');
  */
 Schema.prototype.extend = function(obj, options) {
   // Deep clone the existing schema so we can add without changing it
-  var newSchema = owl.deepCopy(this);
+  var newSchema = _.cloneDeep(this);
 
   newSchema._callQueue = [];
 
@@ -28,9 +28,10 @@ Schema.prototype.extend = function(obj, options) {
         return () => target.concat(that.callQueue);
       case 'push':
         return (e) => target.push(e);
-        break;
       case 'reduce':
         return Array.prototype.reduce.bind(target.concat(that.callQueue));
+      case 'unshift':
+        return (e) => target.unshift(e);
       default:
         if (typeof property !== 'symbol' && isNaN(property)) {
           return target[property];
