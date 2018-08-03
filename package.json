@@ -38,7 +38,8 @@
     },
     {
       "name": "Kenneth May",
-    } "email": "kennylmay@gmail.com"
+      "email": "kennylmay@gmail.com"
+    }
   ],
   "license": "MIT",
   "dependencies": {
