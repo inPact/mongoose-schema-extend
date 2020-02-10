@@ -6,10 +6,10 @@
   "scripts": {
     "test": "node ./node_modules/.bin/grunt test"
   },
-  "homepage": "https://github.com/kennylmay/mongoose-schema-extend",
+  "homepage": "https://github.com/inpact/mongoose-schema-extend",
   "repository": {
     "type": "git",
-    "url": "git://github.com/kennylmay/mongoose-schema-extend.git"
+    "url": "git://github.com/inpact/mongoose-schema-extend.git"
   },
   "keywords": [
     "mongoose",
